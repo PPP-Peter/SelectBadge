@@ -8,7 +8,13 @@
 <br>
 
 ## 2. Info 
-Package combines Select field and Badge field, adds styled classes in CSS and adds functions such as icons(), map(), addTypes(), options(), labels(). Added to BelongsBaadge !
+Package combines Select field and Badge field, adds styled classes in CSS and adds functions such as icons(), map(), addTypes(), options(), labels().
+-  Added to BelongsBaadge ! <br>
+- You can use to like Badge 
+```php
+->displayUsing(fn($value)=> '<span class="' .config('wame-badge.info-white'). '">' . $value . '</span>')->asHtml()
+```
+<img alt="image2" src="image2.png">
 
 ### Added files:
 ```php
