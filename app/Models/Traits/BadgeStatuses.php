@@ -7,28 +7,11 @@ namespace App\Models\Traits;
 trait BadgeStatuses
 {
 
-
-    const
-        NOT_REQUIRED = 1,
-        ELEMENTAL = 2,
-        HIGH_SCHOOL = 3,
-        UNIVERSITY = 4;
-
     const
         OFFICE = 1,
         HALL = 2,
         EXTERIOR = 3,
         MOBILE = 4;
-
-    public function education(): array
-    {
-        return [
-            self::NOT_REQUIRED => __('fields.not_required'),
-            self::ELEMENTAL => __('fields.elemental'),
-            self::HIGH_SCHOOL => __('fields.high_school'),
-            self::UNIVERSITY => __('fields.university'),
-        ];
-    }
 
     public function place(): array
     {
@@ -40,6 +23,14 @@ trait BadgeStatuses
         ];
     }
 
+    public function placeMap(){
+        return [
+            \App\Models\Position::OFFICE => 'office',
+            \App\Models\Position::HALL => 'hall',
+            \App\Models\Position::EXTERIOR => 'exterior',
+            \App\Models\Position::MOBILE => 'mobile',
+        ];
+    }
 
     // uprava css / nalepky
     public function placeType(){
@@ -48,34 +39,6 @@ trait BadgeStatuses
             'hall' => 'status-color-teal',
             'exterior' =>  'status-color-coral',
             'mobile' => 'status-color-teal2',
-        ];
-    }
-    public function educationType(){
-        return [
-            'not_required' => 'status-bg-green',
-            'elemental' => 'status-bg-ice',
-            'high_school' => 'status-bg-aquamarine',
-            'university' => 'status-bg-red',
-        ];
-    }
-
-    //
-    public function educationMap(){
-        return
-            [
-                \App\Models\Position::NOT_REQUIRED => 'not_required',
-                \App\Models\Position::ELEMENTAL => 'elemental',
-                \App\Models\Position::HIGH_SCHOOL => 'high_school',
-                \App\Models\Position::UNIVERSITY => 'university',
-            ];
-    }
-
-    public function placeMap(){
-        return [
-            \App\Models\Position::OFFICE => 'office',
-            \App\Models\Position::HALL => 'hall',
-            \App\Models\Position::EXTERIOR => 'exterior',
-            \App\Models\Position::MOBILE => 'mobile',
         ];
     }
 
@@ -87,13 +50,6 @@ trait BadgeStatuses
             'mobile' => 'switch-vertical',
         ];
     }
-    public function educationIcons(){
-        return [
-            'elemental' => '',
-            'university' => '',
-            'not_required' => '',
-            'high_school' => '',
-        ];
-    }
+
     // more icons https://v1.heroicons.com/
 }

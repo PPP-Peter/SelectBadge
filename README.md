@@ -73,7 +73,7 @@ public static function belongsBadge($select, $options, $map, $types, $icons){
 
 - ### vendor publish  --SelectBadgeServiceProvider
 ```php
-php artisan vendor:publish --provider="Wame\SelectBadge\StatusesServiceProvider"
+php artisan vendor:publish --provider="Wame\SelectBadge\SelectBadgeServiceProvider"
 ```
 you can use config classes or register  ```Nova::style('app', resource_path('css/label-statuses.css'));``` in `NovaServiceProvider.php`
 <br>
