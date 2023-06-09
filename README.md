@@ -13,7 +13,7 @@ Package combines Select field and Badge field, adds styled classes in CSS and ad
 ### Added files:
 ```php
  resources/css/labels-status.css - register to NovaProvider,
- config/labels-status.php - config('label-status.warning'),
+ config/wame-badge.php - config('wame-badge.warning'),
  Models/Trait/Statuses.php  --add to model,
  App\Utils\Helpers\MyFields function SelectBadge; 
 ```
@@ -57,9 +57,9 @@ public static function belongsBadge($select, $options, $map, $types, $icons){
 
 ## 3. Instalation
 
-- ### vendor publish   -- statusesServiceProvider
+- ### vendor publish  --SelectBadgeServiceProvider
 ```php
-php artisan vendor:publish --provider="Wame\Statuses\StatusesServiceProvider"
+php artisan vendor:publish --provider="Wame\SelectBadge\StatusesServiceProvider"
 ```
 <br>
 
@@ -67,16 +67,16 @@ php artisan vendor:publish --provider="Wame\Statuses\StatusesServiceProvider"
 
 - ### Add to your Model Trait 
 ``` php
-Models/Trait/Statuses.php
+Models/Trait/BadgeStatuses.php
 
-use App\Models\Traits\PositionStatuses;
-use PositionStatuses;
+use App\Models\Traits\BadgeStatuses;
+use BadgeStatuses;
 ```
 - ### Add fields to your Nova Model
 ``` php
-use App\Utils\Helpers\MyFields;
+use App\Utils\Helpers\SelectBadge;
 
-...MyFields::selectBadge('place_execution', $this->place(), $this->placeMap(), $this->placeType(), $this->placeIcons()  ),
+...SelectBadge::select('place_execution', $this->place(), $this->placeMap(), $this->placeType(), $this->placeIcons()  ),
 ``` 
 
 - ### Edit trait example:
@@ -98,14 +98,14 @@ use App\Utils\Helpers\MyFields;
     }
 
     // uprava css / nalepky 
-    // you can use css class or tailwind classes from config too : config('label.info')
+    // you can use css class or tailwind classes from config too : config('wame-badge.info')
     public function placeType(){
         return [
             'office' => 'status-color-blue',
             'hall' => 'status-color-teal',
             'exterior' =>  'status-color-coral',
             'mobile' => 'status-color-aquamarine',
-           // 'edit' => config('label.warning'),
+           // 'edit' => config('wame-badge.warning'),
         ];
     }
 
@@ -136,7 +136,7 @@ use App\Utils\Helpers\MyFields;
 
 ### If you dont want Icons use null:
 ``` php
-  ...MyFields::selectBadge('place_execution', $this->place(), $this->placeMap(), $this->placeType(), null  ),
+  ...SelectBadge::select('place_execution', $this->place(), $this->placeMap(), $this->placeType(), null  ),
 ````
 
 Icons can find here:  https://v1.heroicons.com/
@@ -163,6 +163,18 @@ Icons can find here:  https://v1.heroicons.com/
         <td style="background:#836eaa; color:white">purple</td>
     </tr>
 </table>
+
+<table>
+    <tr>
+        <td style="background:#DC3545; color:white">config('wame-badge.error')</td>
+        <td style="background:#bff199; color:black">config('wame-badge.denied')</td>
+        <td style="background:#4AA02C; color:white">config('wame-badge.approved')</td>
+        <td style="background:#0099e5; color:white">config('wame-badge.info')</td>
+        <td style="background:#AFDCEC; color:black">config('wame-badge.default')</td>
+        <td style="background:#EAC117; color:white">config('wame-badge.warning')</td>
+    </tr>
+</table>
+
 
 ### classes:
 - status-bg-[color]
