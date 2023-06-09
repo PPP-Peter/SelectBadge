@@ -1,0 +1,25 @@
+{
+    "name": "wamesk/select-badge",
+    "description": "package create Statuses",
+    "keywords": [
+        "laravel",
+        "status"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Wame\\SelectBadge\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wame\\Statuses\\SelectBadgeServiceProvider"
+            ]
+        }
+    }
+}

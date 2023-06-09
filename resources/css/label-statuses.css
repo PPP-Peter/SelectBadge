@@ -1,0 +1,70 @@
+
+/* STATUSY */
+/*defalut classes danger, succcess...*/
+
+/* farba pozadia */
+.status-none, .status-bg-none, .status-color-none{
+    background-color: none;
+}
+
+/* iba farba pisma*/
+.status-color-primary{color: rgba(var(--colors-primary-500));}
+.status-color-red{color:#DC3545 !important;}
+.status-color-green{color:#4AA02C !important;}
+.status-color-green2{color: #6cc24a !important;}
+.status-color-green-dark{color:#79ceb8 !important;}
+.status-color-blue{color:#0099e5 !important;}
+.status-color-ice{color:#368BC1 !important;}
+.status-color-coral{color:#AFDCEC !important;}
+.status-color-teal{color:#0a8ea0 !important;}
+.status-color-teal2{color:#1cc7d0 !important;}
+.status-color-aquamarine{color:#7FFFD4 !important;}
+.status-color-golden{color:#EAC117 !important;}
+.status-color-orange{color:#ef9421 !important;}
+.status-color-orange-light{color:#fdb94e !important;}
+.status-color-purple{color:#836eaa !important;}
+.status-color-pink{color:#f7afff !important;}
+.status-color-green-light{color:#bff199 !important;}
+
+/* farba pozadia*/
+.status-bg-primary{background-color: rgba(var(--colors-primary-500));color:white !important;}
+.status-bg-green, .approved{background-color: #4AA02C !important; color:white !important;}
+.status-bg-green2{ background-color: #6cc24a !important; color:white !important;}
+.status-bg-green-dark{ background-color: #79ceb8 !important; color:white !important;}
+.status-bg-green-light{ background-color: #bff199 !important; color:black !important;}
+.status-bg-red, .denied{ background-color: #DC3545 !important; color:white !important;}
+.status-bg-blue{ background-color: #0099e5 !important; color:white !important;}
+.status-bg-ice{ background-color: #368BC1 !important; color:white !important;}
+.status-bg-coral{ background-color: #AFDCEC !important; color:black !important;}
+.status-bg-aquamarine{ background-color: #7FFFD4 !important; color:black !important;}
+.status-bg-golden{ background-color: #EAC117 !important; color:white !important;}
+.status-bg-teal{ background-color: #0a8ea0 !important; color:white !important;}
+.status-bg-teal2{ background-color: #1cc7d0 !important; color:white !important;}
+.status-bg-orange{ background-color: #ef9421 !important; color:white !important;}
+.status-bg-orange-light{ background-color: #fdb94e !important; color:white !important;}
+.status-bg-purple{ background-color: #836eaa !important; color:white !important;}
+.status-bg-pink{ background-color: #f7afff !important; color:white !important;}
+
+
+/* podciarknute */
+.status-line-red{border-bottom: 3px solid red;border-radius: 0px;color: #DC3545 !important;}
+.status-line-green{border-bottom: 3px solid green;border-radius: 0px;color: green !important;}
+.status-line-green-light{border-bottom: 3px solid #bff199;border-radius: 0px;color: #bff199 !important;}
+.status-line-green2{border-bottom: 3px solid #6cc24a;border-radius: 0px;color: #6cc24a !important;}
+.status-line-blue{border-bottom: 3px solid #0099e5;border-radius: 0px;color: #0099e5 !important;}
+.status-line-coral{border-bottom: 3px solid #AFDCEC;border-radius: 0px;color: #AFDCEC !important;}
+.status-line-teal{border-bottom: 3px solid teal;border-radius: 0px;color: teal !important;}
+.status-line-purple{border-bottom: 3px solid mediumpurple;border-radius: 0px;color: mediumpurple !important;}
+.status-line-golden{border-bottom: 3px solid goldenrod;border-radius: 0px;color: goldenrod !important;}
+
+
+  /* s okrajom */
+.status-border-red{border: 3px solid red; color: red !important;}
+.status-border-green{border: 3px solid green; color: green !important;}
+.status-border-green2{border: 3px solid #6cc24a; color: #6cc24a !important;}
+.status-border-green-light{border: 3px solid #bff199; color: #bff199 !important;}
+.status-border-blue{border: 3px solid #0099e5; color: #0099e5 !important;}
+.status-border-coral{border: 3px solid #AFDCEC; color:#AFDCEC  !important;}
+.status-border-golden{border: 3px solid goldenrod; color: goldenrod !important;}
+.status-border-teal{border: 3px solid teal; color: teal !important;}
+.status-border-purple{border: 3px solid mediumpurple; color: mediumpurple !important;}
