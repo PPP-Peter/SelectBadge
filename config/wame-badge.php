@@ -1,6 +1,6 @@
 <?php
 
-$default = "inline-flex items-center whitespace-nowrap h-6 px-2 rounded-full font-semibold";
+$default = "inline-flex items-center whitespace-nowrap h-6 px-2 rounded-full font-bold"; //font-semibold
 $color = 'white';
 
 return [
