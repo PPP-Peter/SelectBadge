@@ -21,10 +21,10 @@ Package combines Select field and Badge field, adds styled classes in CSS and ad
 
 ### Added files:
 ```php
- resources/css/labels-status.css - register to NovaProvider,
+ resources/css/labels-status.css - register file to NovaProvider    Nova::style('app', resource_path('css/labels-status.css'));,
  config/wame-badge.php - config('wame-badge.warning'),
- Models/Trait/Statuses.php  --add to model,
- App\Utils\Helpers\MyFields function SelectBadge; 
+ Models/Trait/BadgeStatuses.php  --add to model,
+ App\Utils\Helpers\SelectBadge.php function SelectBadge; 
 ```
 
 ### Function
@@ -70,6 +70,7 @@ public static function belongsBadge($select, $options, $map, $types, $icons){
 ```php
 php artisan vendor:publish --provider="Wame\SelectBadge\StatusesServiceProvider"
 ```
+you can use config classes or register  ```Nova::style('app', resource_path('css/labels-status.css'));``` in `NovaServiceProvider.php`
 <br>
 
 ## 4. Usage
@@ -193,7 +194,7 @@ Icons can find here:  https://v1.heroicons.com/
         <td style="background:#EAC117; color:white">config('wame-badge.warning-white')</td>
     </tr>
 </table>
-
+<img alt="colors" src="colors.png">
 
 ### classes:
 - status-bg-[color]
@@ -205,4 +206,3 @@ Icons can find here:  https://v1.heroicons.com/
 - primary 
 - none
 
-<img alt="colors" src="colors.png">
