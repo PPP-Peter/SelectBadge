@@ -33,13 +33,9 @@ class SelectBadge
         ];
     }
 
-    public static function belongs($select, $options, $map, $types, $icons)
+    public static function badge($select, $options, $map, $types, $icons)
     {
         return [
-            BelongsTo::make(__('fields.' .$select), $select)
-                ->filterable()
-                ->sortable()
-                ->onlyOnForms(),
             Badge::make(__('fields.' . $select), $select)
                 ->map($map)
                 ->hideWhenCreating()->hideWhenUpdating()

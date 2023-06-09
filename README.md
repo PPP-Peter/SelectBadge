@@ -9,8 +9,7 @@
 
 ## 2. Info 
 Package combines Select field and Badge field, adds styled classes in CSS and adds functions such as icons(), map(), addTypes(), options(), labels().
--  Added to BelongsBaadge ! <br>
-- You can use to like Badge
+- You can use to like simple css Badge
 ### How use Badge 
 ```php
 ->displayUsing(fn($value)=> '<span class="' .config('wame-badge.info-white'). '">' . $value . '</span>')->asHtml()
@@ -26,7 +25,7 @@ Package combines Select field and Badge field, adds styled classes in CSS and ad
 
 ### Added files:
 ```php
- resources/css/labels-status.css - register file to NovaProvider    Nova::style('app', resource_path('css/label-statuses.css'));,
+ resources/css/labels-status.css - register file to NovaProvider    Nova::style('label-statuses', resource_path('css/label-statuses.css'));,
  config/wame-badge.php - config('wame-badge.warning'),
  Models/Trait/BadgeStatuses.php  --add to model,
  App\Utils\Helpers\SelectBadge.php function SelectBadge; 
@@ -34,7 +33,7 @@ Package combines Select field and Badge field, adds styled classes in CSS and ad
 
 ### Function
 ```php
-public static function selectBadge($select, $options, $map, $types, $icons){
+public static function select ($select, $options, $map, $types, $icons){
     return [
         Select::make(__('fields.' .$select), $select)
             ->filterable()
@@ -52,12 +51,8 @@ public static function selectBadge($select, $options, $map, $types, $icons){
     ];
 }
 
-public static function belongsBadge($select, $options, $map, $types, $icons){
+public static function badge ($select, $options, $map, $types, $icons){
     return [
-        BelongsTo::make(__('fields.' .$select), $select)
-            ->filterable()
-            ->sortable()
-            ->onlyOnForms(),
         Badge::make(__('fields.' . $select), $select)
             ->map($map)
             ->hideWhenCreating()->hideWhenUpdating()
@@ -75,7 +70,7 @@ public static function belongsBadge($select, $options, $map, $types, $icons){
 ```php
 php artisan vendor:publish --provider="Wame\SelectBadge\SelectBadgeServiceProvider"
 ```
-you can use config classes or register  ```Nova::style('app', resource_path('css/label-statuses.css'));``` in `NovaServiceProvider.php`
+you can use config classes or register  ```Nova::style('label-statuses', resource_path('css/label-statuses.css'));``` in `NovaServiceProvider.php`
 <br>
 
 ## 4. Usage
