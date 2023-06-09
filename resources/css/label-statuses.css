@@ -1,6 +1,12 @@
 
 /* STATUSY */
 /*defalut classes danger, succcess...*/
+.s-badge{
+    border-radius: 6px;
+    padding: 7px;
+    font-weight: 600;
+}
+
 
 /* farba pozadia */
 .status-none, .status-bg-none, .status-color-none{
@@ -9,6 +15,7 @@
 
 /* iba farba pisma*/
 .status-color-primary{color: rgba(var(--colors-primary-500));}
+.status-color-secondary{color: rgba(var(--colors-secondary-300));}
 .status-color-red{color:#DC3545 !important;}
 .status-color-green{color:#4AA02C !important;}
 .status-color-green2{color: #6cc24a !important;}
@@ -28,6 +35,7 @@
 
 /* farba pozadia*/
 .status-bg-primary{background-color: rgba(var(--colors-primary-500));color:white !important;}
+.status-bg-secondary{background-color: rgba(var(--colors-primary-400));color:white }
 .status-bg-green, .approved{background-color: #4AA02C !important; color:white !important;}
 .status-bg-green2{ background-color: #6cc24a !important; color:white !important;}
 .status-bg-green-dark{ background-color: #79ceb8 !important; color:white !important;}

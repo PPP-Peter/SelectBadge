@@ -10,18 +10,23 @@
 ## 2. Info 
 Package combines Select field and Badge field, adds styled classes in CSS and adds functions such as icons(), map(), addTypes(), options(), labels().
 -  Added to BelongsBaadge ! <br>
-- You can use to like Badge 
+- You can use to like Badge
+### How use Badge 
 ```php
 ->displayUsing(fn($value)=> '<span class="' .config('wame-badge.info-white'). '">' . $value . '</span>')->asHtml()
 ```
 ```php
 ->displayUsing(fn($value)=> '<span class="' .config('wame-badge.info'). '">' . $value . '</span>')->asHtml()
 ```
+```php
+->displayUsing(fn($value)=> '<span class="status-bg-teal s-badge">' . $value . '</span>')->asHtml(),
+->displayUsing(fn($value)=> '<span class="status-bg-primary s-badge">' . $value . '</span>')->asHtml(),
+````
 <img alt="image2" src="image2.png">
 
 ### Added files:
 ```php
- resources/css/labels-status.css - register file to NovaProvider    Nova::style('app', resource_path('css/labels-status.css'));,
+ resources/css/labels-status.css - register file to NovaProvider    Nova::style('app', resource_path('css/label-statuses.css'));,
  config/wame-badge.php - config('wame-badge.warning'),
  Models/Trait/BadgeStatuses.php  --add to model,
  App\Utils\Helpers\SelectBadge.php function SelectBadge; 
@@ -70,7 +75,7 @@ public static function belongsBadge($select, $options, $map, $types, $icons){
 ```php
 php artisan vendor:publish --provider="Wame\SelectBadge\StatusesServiceProvider"
 ```
-you can use config classes or register  ```Nova::style('app', resource_path('css/labels-status.css'));``` in `NovaServiceProvider.php`
+you can use config classes or register  ```Nova::style('app', resource_path('css/label-statuses.css'));``` in `NovaServiceProvider.php`
 <br>
 
 ## 4. Usage
@@ -176,33 +181,37 @@ Icons can find here:  https://v1.heroicons.com/
 
 <table>
     <tr>
-        <td style="background:#DC3545; color:white">config('wame-badge.error')</td>
-        <td style="background:#bff199; color:black">config('wame-badge.denied')</td>
-        <td style="background:#4AA02C; color:white">config('wame-badge.approved')</td>
-        <td style="background:#0099e5; color:white">config('wame-badge.info')</td>
-        <td style="background:#AFDCEC; color:black">config('wame-badge.default')</td>
-        <td style="background:#EAC117; color:white">config('wame-badge.warning')</td>
+        <td style="background:#DC3545; color:white">config('wame-badge.error)</td>
+        <td style="background:#bff199; color:black">denied</td>
+        <td style="background:#4AA02C; color:white">approved</td>
+        <td style="background:#0099e5; color:white">info</td>
+        <td style="background:#AFDCEC; color:black">default</td>
+        <td style="background:#EAC117; color:white">warning</td>
     </tr>
 </table>
 <table>
     <tr>
         <td style="background:#DC3545; color:white">config('wame-badge.error-white')</td>
-        <td style="background:#bff199; color:black">config('wame-badge.denied-white')</td>
-        <td style="background:#4AA02C; color:white">config('wame-badge.approved-white')</td>
-        <td style="background:#0099e5; color:white">config('wame-badge.info-white')</td>
-        <td style="background:#AFDCEC; color:black">config('wame-badge.default-white')</td>
-        <td style="background:#EAC117; color:white">config('wame-badge.warning-white')</td>
+        <td style="background:#bff199; color:black">denied-white</td>
+        <td style="background:#4AA02C; color:white">approved-white</td>
+        <td style="background:#0099e5; color:white">info-white</td>
+        <td style="background:#AFDCEC; color:black">default-white</td>
+        <td style="background:#EAC117; color:white">warning-white</td>
     </tr>
 </table>
 <img alt="colors" src="colors.png">
 
-### classes:
+### config classes:
+- config('wame-badge.error')
+- ...
+### css classes:
 - status-bg-[color]
 - status-color-[color]
 - status-line-[color]
 - status-border-[color]
-
+- ...
 ### more: 
 - primary 
+- secondary
 - none
 
