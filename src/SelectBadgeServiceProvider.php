@@ -19,7 +19,7 @@ class SelectBadgeServiceProvider extends ServiceProvider
             // Export css
             $this->publishes([__DIR__ . '/../resources/css' => resource_path('css')], ['css', 'select-badge']);
             // Export Utils
-            $this->publishes([__DIR__ . '/../app/Utils/Helpers/SelectBadge.php' => app_path('Utils/Helpers/SelectBadge.php')], ['utils', 'select-badg']);
+            $this->publishes([__DIR__ . '/../Utils/Helpers/SelectBadge.php' => app_path('Utils/Helpers/SelectBadge.php')], ['utils', 'select-badge']);
         }
 
     }
