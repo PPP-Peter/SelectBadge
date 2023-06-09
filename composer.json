@@ -18,7 +18,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Wame\\Statuses\\SelectBadgeServiceProvider"
+                "Wame\\SelectBadge\\SelectBadgeServiceProvider"
             ]
         }
     }
