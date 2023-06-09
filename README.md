@@ -180,6 +180,16 @@ Icons can find here:  https://v1.heroicons.com/
         <td style="background:#EAC117; color:white">config('wame-badge.warning')</td>
     </tr>
 </table>
+<table>
+    <tr>
+        <td style="background:#DC3545; color:white">config('wame-badge.error-white')</td>
+        <td style="background:#bff199; color:black">config('wame-badge.denied-white')</td>
+        <td style="background:#4AA02C; color:white">config('wame-badge.approved-white')</td>
+        <td style="background:#0099e5; color:white">config('wame-badge.info-white')</td>
+        <td style="background:#AFDCEC; color:black">config('wame-badge.default-white')</td>
+        <td style="background:#EAC117; color:white">config('wame-badge.warning-white')</td>
+    </tr>
+</table>
 
 
 ### classes:
