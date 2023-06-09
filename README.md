@@ -14,6 +14,9 @@ Package combines Select field and Badge field, adds styled classes in CSS and ad
 ```php
 ->displayUsing(fn($value)=> '<span class="' .config('wame-badge.info-white'). '">' . $value . '</span>')->asHtml()
 ```
+```php
+->displayUsing(fn($value)=> '<span class="' .config('wame-badge.info'). '">' . $value . '</span>')->asHtml()
+```
 <img alt="image2" src="image2.png">
 
 ### Added files:
@@ -201,3 +204,5 @@ Icons can find here:  https://v1.heroicons.com/
 ### more: 
 - primary 
 - none
+
+<img alt="colors" src="colors.png">
