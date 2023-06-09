@@ -1,8 +1,11 @@
 {
-    "name": "wamesk/select-badge",
-    "description": "package create Statuses",
+    "name": "pppcreative/select-badge",
+    "description": "Package combines Select field and Badge field, adds styled classes in CSS and adds functions such as icons(), map(), addTypes(), options(), labels(). Added to BelongsBaadge !",
     "keywords": [
         "laravel",
+        "select",
+        "badge",
+        "selectBadge",
         "status"
     ],
     "type": "library",
