@@ -33,7 +33,7 @@ Package combines Select field and Badge field, adds styled classes in CSS and ad
 
 ### Function
 ```php
-public static function select ($select, $options, $map, $types, $icons){
+public static function select ($select, $options, $types, $icons){
     return [
         Select::make(__('fields.' .$select), $select)
             ->filterable()
@@ -43,7 +43,7 @@ public static function select ($select, $options, $map, $types, $icons){
             ->rules('required')->required(),
         Badge::make(__('fields.' . $select), $select)
             ->sortable()
-            ->map($map)
+            ->map($options)
             ->hideWhenCreating()->hideWhenUpdating()
             ->addTypes($types)
             ->icons($icons ? $icons : $types)
@@ -119,15 +119,6 @@ use App\Utils\Helpers\SelectBadge;
         ];
     }
 
-    public function placeMap(){
-        return [
-            \App\Models\Position::OFFICE => 'office',
-            \App\Models\Position::HALL => 'hall',
-            \App\Models\Position::EXTERIOR => 'exterior',
-            \App\Models\Position::MOBILE => 'mobile',
-        ];
-    }
-
 // Add Icons 
     public function placeIcons(){
         return [
@@ -138,6 +129,59 @@ use App\Utils\Helpers\SelectBadge;
         ];
     }
 ```
+OR
+```php
+    const PLACE = [
+        OFFICE = 1,
+        HALL = 2,
+        EXTERIOR = 3,
+        MOBILE = 4
+        ];
+        
+      public function placeVariable ($value = 'value') {
+        $variable = [
+            __('fields.office'),
+            __('fields.hall'),
+            __('fields.exterior'),
+            __('fields.mobile'),
+            __('fields.other'),
+        ];
+        $type = [
+            'status-color-blue',
+            'status-color-teal',
+            'status-color-coral',
+            'status-color-teal2',
+            'status-color-default',
+        ];
+        $icon = 'collection';
+
+        if ($value === 'value') return $variable;
+        if ($value === 'icon') return $icon;
+        if ($value === 'type') return $type;
+    }
+    public function place(): array
+    {
+        return array_combine(array_values(self::PLACE), $this->placeVariable());
+    }
+
+    public function placeType(){
+        return array_combine($this->placeVariable(), $this->placeVariable('type'));
+    }
+
+    public function placeIcons(){
+        //return array_combine($this->placeVariable(), $this->placeVariable('icon'));
+        return array_fill_keys($this->educationVariable(), $this->educationVariable('icon'));
+    }
+
+    // OR
+   ...MyFields::selectBadge('place_execution', $this->place(), $this->placeType('type'), $this->placeIcons('icon')  ),
+    public function placeType($type){
+        if (is_array($this->placeVariable($type))){
+            return array_combine($this->placeVariable(), $this->placeVariable($type));
+        }
+        else  return array_fill_keys($this->placeVariable(), $this->placeVariable($type));
+    }
+```
 <br>
 
 ## 5. Configuration / Customization
@@ -146,7 +190,7 @@ use App\Utils\Helpers\SelectBadge;
 
 ### If you dont want Icons use null:
 ``` php
-  ...SelectBadge::select('place_execution', $this->place(), $this->placeMap(), $this->placeType(), null  ),
+  ...SelectBadge::select('place_execution', $this->place(), $this->placeType(), null  ),
 ````
 
 Icons can find here:  https://v1.heroicons.com/

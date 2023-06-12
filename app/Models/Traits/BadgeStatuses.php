@@ -23,15 +23,6 @@ trait BadgeStatuses
         ];
     }
 
-    public function placeMap(){
-        return [
-            \App\Models\Position::OFFICE => 'office',
-            \App\Models\Position::HALL => 'hall',
-            \App\Models\Position::EXTERIOR => 'exterior',
-            \App\Models\Position::MOBILE => 'mobile',
-        ];
-    }
-
     // uprava css / nalepky
     public function placeType(){
         return [
