@@ -7,39 +7,46 @@ namespace App\Models\Traits;
 trait BadgeStatuses
 {
 
-    const
-        OFFICE = 1,
-        HALL = 2,
-        EXTERIOR = 3,
-        MOBILE = 4;
+    const PLACE = [
+        'OFFICE' => 1,
+        'HALL' => 2,
+        'EXTERIOR' => 3,
+        'MOBILE' => 4,
+    ];
 
-    public function place(): array
-    {
-        return [
-            self::OFFICE => __('fields.office'),
-            self::HALL => __('fields.hall'),
-            self::EXTERIOR => __('fields.exterior'),
-            self::MOBILE => __('fields.mobile'),
+    public function placeVariable ($value = 'value') {
+        $variable = [
+            __('fields.office'),
+            __('fields.hall'),
+            __('fields.exterior'),
+            __('fields.mobile'),
         ];
+        $type = [
+            'status-color-blue',
+            'status-color-teal',
+            'status-color-coral',
+            'status-color-teal2',
+        ];
+        $icon = [
+            'collection',
+            'office-building',
+            'cloud',
+            'switch-vertical',
+        ];
+
+        if ($value === 'value') return $variable;
+        if ($value === 'icon') return $icon;
+        if ($value === 'type') return $type;
     }
 
-    // uprava css / nalepky
-    public function placeType(){
-        return [
-            'office' => 'status-color-blue',
-            'hall' => 'status-color-teal',
-            'exterior' =>  'status-color-coral',
-            'mobile' => 'status-color-teal2',
-        ];
-    }
 
-    public function placeIcons(){
-        return [
-            'office' => 'collection',
-            'hall' => 'office-building',
-            'exterior' => 'cloud',
-            'mobile' => 'switch-vertical',
-        ];
+    public function place($type=null){
+        if ($type == null) return array_combine(array_values(self::PLACE), $this->placeVariable());
+
+        if (is_array($this->placeVariable($type))){
+            return array_combine($this->placeVariable(), $this->placeVariable($type));
+        }
+        else  return array_fill_keys($this->placeVariable(), $this->placeVariable($type));
     }
 
     // more icons https://v1.heroicons.com/

@@ -51,10 +51,10 @@ public static function select ($select, $options, $types, $icons){
     ];
 }
 
-public static function badge ($select, $options, $map, $types, $icons){
+public static function badge ($select, $options, $types, $icons){
     return [
         Badge::make(__('fields.' . $select), $select)
-            ->map($map)
+            ->map($options)
             ->hideWhenCreating()->hideWhenUpdating()
             ->addTypes($types)
             ->icons($icons ? $icons : $types)
@@ -86,11 +86,13 @@ use BadgeStatuses;
 ``` php
 use App\Utils\Helpers\SelectBadge;
 
-...SelectBadge::select('place_execution', $this->place(), $this->placeMap(), $this->placeType(), $this->placeIcons()  ),
+//...SelectBadge::select('place_execution', $this->place(), $this->placeMap(), $this->placeType(), $this->placeIcons()  ),
+...SelectBadge::select('place_execution', $this->place(), $this->place('type'), $this->place('icon')  ),
 ``` 
 
 - ### Edit trait example:
 ```php
+/*
     const
         OFFICE = 1,
         HALL = 2,
@@ -128,6 +130,7 @@ use App\Utils\Helpers\SelectBadge;
             'mobile' => 'document-text',
         ];
     }
+*/
 ```
 OR
 ```php
@@ -159,28 +162,15 @@ OR
         if ($value === 'icon') return $icon;
         if ($value === 'type') return $type;
     }
-    public function place(): array
-    {
-        return array_combine(array_values(self::PLACE), $this->placeVariable());
-    }
+      public function place($type=null){
+        if ($type == null) return array_combine(array_values(self::PLACE), $this->placeVariable());
 
-    public function placeType(){
-        return array_combine($this->placeVariable(), $this->placeVariable('type'));
-    }
-
-    public function placeIcons(){
-        //return array_combine($this->placeVariable(), $this->placeVariable('icon'));
-        return array_fill_keys($this->educationVariable(), $this->educationVariable('icon'));
-    }
-
-    // OR
-   ...MyFields::selectBadge('place_execution', $this->place(), $this->placeType('type'), $this->placeIcons('icon')  ),
-    public function placeType($type){
         if (is_array($this->placeVariable($type))){
             return array_combine($this->placeVariable(), $this->placeVariable($type));
         }
         else  return array_fill_keys($this->placeVariable(), $this->placeVariable($type));
     }
+   
 ```
 <br>
 
@@ -190,7 +180,8 @@ OR
 
 ### If you dont want Icons use null:
 ``` php
-  ...SelectBadge::select('place_execution', $this->place(), $this->placeType(), null  ),
+$icon = '';
+  ...SelectBadge::select('place_execution', $this->place(), $this->place('type'), place('icon')  ),
 ````
 
 Icons can find here:  https://v1.heroicons.com/
