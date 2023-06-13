@@ -288,5 +288,4 @@ Icons can find here:  https://v1.heroicons.com/
     }
  
 ```
- 
- </details>
+</details>
