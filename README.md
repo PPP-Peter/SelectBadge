@@ -120,7 +120,10 @@ use App\Utils\Helpers\SelectBadge;
         else return array_fill_keys($variable, $data);
     }
 ```
-OR
+<details>
+ OR
+  <summary> Kliknite sem pre zobrazenie obsahu</summary>
+ 
 ```php
 /*
     const
@@ -162,7 +165,12 @@ OR
     }
 */
 ```
-OR
+</details>
+ 
+
+<details>
+ OR
+  <summary> Kliknite sem pre zobrazenie obsahu</summary>
 ```php
 /*
     const PLACE = [
@@ -203,6 +211,7 @@ OR
     }
    */
 ```
+ </details>
 <br>
 
 ## 5. Configuration / Customization
