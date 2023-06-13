@@ -120,8 +120,9 @@ use App\Utils\Helpers\SelectBadge;
         else return array_fill_keys($variable, $data);
     }
 ```
-<details>
  OR
+ 
+<details>
   <summary> Kliknite sem pre zobrazenie obsahu</summary>
  
 ```php
@@ -167,9 +168,9 @@ use App\Utils\Helpers\SelectBadge;
 ```
 </details>
  
-
-<details>
  OR
+ 
+<details>
   <summary> Kliknite sem pre zobrazenie obsahu</summary>
 ```php
 /*
@@ -212,6 +213,7 @@ use App\Utils\Helpers\SelectBadge;
    */
 ```
  </details>
+ 
 <br>
 
 ## 5. Configuration / Customization
