@@ -90,27 +90,32 @@ use App\Utils\Helpers\SelectBadge;
 
 - ### Edit trait example:
 ```php
+
+    const PLACE = [
+        'OFFICE' => 1,
+        'HALL' => 2,
+        'EXTERIOR' => 3,
+        'MOBILE' => 4,
+    ];
+
     public function place($value=null){
         $variable = [
             __('fields.office'),
             __('fields.hall'),
             __('fields.exterior'),
             __('fields.mobile'),
-            __('fields.other'),
         ];
         $icon = [
             'collection',
             'office-building',
             'cloud',
             'switch-vertical',
-            'hashtag',
         ];
         $type = [
             'status-color-blue',
             'status-color-teal',
             'status-color-coral',
             'status-color-teal2',
-            'status-color-default',
         ];
 
         $data = ($value === 'value') ? $variable : (($value === 'icon') ? $icon : (($value === 'type') ? $type : null));
