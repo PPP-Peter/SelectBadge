@@ -13,8 +13,6 @@ Package combines Select field and Badge field, adds styled classes in CSS and ad
 ### How use Badge 
 ```php
 ->displayUsing(fn($value)=> '<span class="' .config('wame-badge.info-white'). '">' . $value . '</span>')->asHtml()
-```
-```php
 ->displayUsing(fn($value)=> '<span class="' .config('wame-badge.info'). '">' . $value . '</span>')->asHtml()
 ```
 ```php
@@ -92,6 +90,38 @@ use App\Utils\Helpers\SelectBadge;
 
 - ### Edit trait example:
 ```php
+    public function place($value=null){
+        $variable = [
+            __('fields.office'),
+            __('fields.hall'),
+            __('fields.exterior'),
+            __('fields.mobile'),
+            __('fields.other'),
+        ];
+        $icon = [
+            'collection',
+            'office-building',
+            'cloud',
+            'switch-vertical',
+            'hashtag',
+        ];
+        $type = [
+            'status-color-blue',
+            'status-color-teal',
+            'status-color-coral',
+            'status-color-teal2',
+            'status-color-default',
+        ];
+
+        $data = ($value === 'value') ? $variable : (($value === 'icon') ? $icon : (($value === 'type') ? $type : null));
+
+        if ($value == null) return array_combine(array_values(self::PLACE), $variable);
+        if (is_array($data)) return array_combine($variable, $data);
+        else return array_fill_keys($variable, $data);
+    }
+```
+OR
+```php
 /*
     const
         OFFICE = 1,
@@ -134,6 +164,7 @@ use App\Utils\Helpers\SelectBadge;
 ```
 OR
 ```php
+/*
     const PLACE = [
         OFFICE = 1,
         HALL = 2,
@@ -170,7 +201,7 @@ OR
         }
         else  return array_fill_keys($this->placeVariable(), $this->placeVariable($type));
     }
-   
+   */
 ```
 <br>
 
