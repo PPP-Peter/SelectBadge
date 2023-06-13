@@ -249,6 +249,7 @@ Icons can find here:  https://v1.heroicons.com/
 <details>
   <summary> Kliknite sem pre zobrazenie obsahu</summary>
 ```php
+ 
 /*
     const PLACE = [
         OFFICE = 1,
