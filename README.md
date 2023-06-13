@@ -202,7 +202,7 @@ Icons can find here:  https://v1.heroicons.com/
   <summary> Kliknite sem pre zobrazenie obsahu</summary>
  
 ```php
-/*
+
     const
         OFFICE = 1,
         HALL = 2,
@@ -240,7 +240,7 @@ Icons can find here:  https://v1.heroicons.com/
             'mobile' => 'document-text',
         ];
     }
-*/
+
 ```
 </details>
  
@@ -250,7 +250,6 @@ Icons can find here:  https://v1.heroicons.com/
   <summary> Kliknite sem pre zobrazenie obsahu</summary>
 ```php
  
-/*
     const PLACE = [
         OFFICE = 1,
         HALL = 2,
@@ -287,7 +286,6 @@ Icons can find here:  https://v1.heroicons.com/
         }
         else  return array_fill_keys($this->placeVariable(), $this->placeVariable($type));
     }
-*/
  
 ```
  
