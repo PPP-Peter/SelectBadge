@@ -287,8 +287,8 @@ Icons can find here:  https://v1.heroicons.com/
         }
         else  return array_fill_keys($this->placeVariable(), $this->placeVariable($type));
     }
-   */
-```
- </details>
+*/
  
-
+```
+ 
+ </details>
